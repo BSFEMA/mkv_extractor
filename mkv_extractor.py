@@ -222,7 +222,7 @@ def export_chapters(file):
 def process_files():
     global json_data
     # User imput for what action to take
-    print("Choose what to extract:")
+    print("Available actions:")
     print("1)  Everything")
     print("2)  Tracks (Audio + Video + Subtitles)")
     print("3)  Attachments")
@@ -232,7 +232,7 @@ def process_files():
     print("7)  Chapters")
     action = ""
     while action == "":
-        action = input("Enter manga URL: ").strip()
+        action = input("Choose what to extract: ").strip()
     action = str(action)
     for file in files:
         # Get information from mkv file in json format:
