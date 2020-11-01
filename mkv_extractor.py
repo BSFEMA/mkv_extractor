@@ -36,7 +36,12 @@ def export_all_audios(file):
             if track["type"] == "audio":
                 track_type = track["properties"]["codec_id"]
                 track_id = track["id"]
-                track_lang = track["properties"]["language_ietf"]
+                if "language_ietf" in track["properties"]:  # "language_ietf" isn't always a property...
+                    track_lang = track["properties"]["language_ietf"]
+                elif "language" in track["properties"]:
+                    track_lang = track["properties"]["language"]
+                else:
+                    track_lang = ""
                 if not (track["properties"].get("track_name") is None):
                     track_filename = filename + ".track_" + str(track_id) + "." + track["properties"]["track_name"] + "." + track_lang
                 else:
@@ -106,7 +111,12 @@ def export_all_videos(file):
             if track["type"] == "video":
                 track_type = track["properties"]["codec_id"]
                 track_id = track["id"]
-                track_lang = track["properties"]["language_ietf"]
+                if "language_ietf" in track["properties"]:  # "language_ietf" isn't always a property...
+                    track_lang = track["properties"]["language_ietf"]
+                elif "language" in track["properties"]:
+                    track_lang = track["properties"]["language"]
+                else:
+                    track_lang = ""
                 if not (track["properties"].get("track_name") is None):
                     track_filename = filename + ".track_" + str(track_id) + "." + track["properties"]["track_name"] + "." + track_lang
                 else:
@@ -153,7 +163,12 @@ def export_all_subtitles(file):
             if track["type"] == "subtitles":
                 track_type = track["properties"]["codec_id"]
                 track_id = track["id"]
-                track_lang = track["properties"]["language_ietf"]
+                if "language_ietf" in track["properties"]:  # "language_ietf" isn't always a property...
+                    track_lang = track["properties"]["language_ietf"]
+                elif "language" in track["properties"]:
+                    track_lang = track["properties"]["language"]
+                else:
+                    track_lang = ""
                 if not (track["properties"].get("track_name") is None):
                     track_filename = filename + ".track_" + str(track_id) + "." + track["properties"]["track_name"] + "." + track_lang
                 else:
