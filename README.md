@@ -7,7 +7,7 @@ Application:  mkv_extractor
 
 Author:  BSFEMA
 
-Started:  2008-10-18
+Started:  2020-10-18
 
 Prerequisites:  You need to have MKVToolNix installed:  https://mkvtoolnix.download/downloads.html  Try running "mkvmerge --version" in terminal.  If that works, then you are good to go, otherwise install MKVToolNix
 
